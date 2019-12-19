@@ -11,7 +11,7 @@ gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'pg'
 gem 'pg_search'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'rails', '~> 6.0.0'
 gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
