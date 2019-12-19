@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PersonalBlog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_pack_path("media/images/logo.png"), class: "logo-rounded"%>
+
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_pack_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <% if current_user && current_user.admin? %>
+     <%= render 'shared/header_admin'%>
+    <% else %>
+      <%= render 'shared/header'%>
+    <% end %>
+    <%= yield %>
+    <%= render 'shared/footer' %> 
+  </body>
+</html>

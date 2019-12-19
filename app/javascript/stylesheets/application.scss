@@ -1,0 +1,141 @@
+@import "bulma";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap');
+
+@import 'components/panel';
+@import 'components/container';
+@import 'components/actiontext';
+@import 'components/table';
+@import 'components/card';
+@import 'components/inputs';
+
+@import 'utils/background';
+@import 'utils/margins';
+@import 'utils/background';
+@import 'utils/alignments';
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+}
+.logo-rounded {
+  border-radius: 10px;
+}
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em;
+  padding: 0; 
+  line-height: 30px;
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+
+.header {
+  background: rgba(65, 107, 72, 0.623);
+}
+
+.head-candy{
+  background: url("~images/banner3.png") no-repeat center $white;
+  background-size: 1280px 400px;
+  width: 100%;
+  min-height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.footer {
+  width: 100%;
+  font-size: 14px;
+  position: absolute;
+
+  .footer-columns {
+    display: table-footer-group !important;
+  
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.flash-container {
+  margin-top: 4rem;
+}
+
+.button-subscribe {
+  background: rgba(149, 226, 162, 0.664);
+  color: white;
+  margin: 5px;
+}
+
+$green: rgb(37, 100, 48);
+
+.text {
+  &.green {
+    color: $green;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+.banner-information {
+  min-height: 350px;
+  color: $green;
+  @media (min-width: 1024px) {
+    margin-left: 40rem;
+    padding-top: 4rem;
+  }
+  
+}
+
+
+.footer {
+  .logo {
+    width: 30px;
+  }
+}

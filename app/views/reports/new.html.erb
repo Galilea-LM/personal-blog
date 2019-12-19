@@ -1,0 +1,35 @@
+<div class="full-width-container has-backgroud-image">
+  <div class="has-text-centered panel has-shadow ">
+    <p class="is-size-2-desktop is-size-3-mobile text green">Report Issue</p>
+    <%= form_for(@report) do |f|%>
+      <div class="field">
+        <div class="control has-icons-left has-icons-right">
+          <%= f.email_field :reporter, autofocus: true, autocomplete: "email", placeholder:"Email", class:"input" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>        
+      </div>
+
+      <div class="field ">
+        <%= f.label :description, class: "label text green" %>
+        <div class="control">
+          <%= f.rich_text_area :description, class:"input", required: true %>
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="control">
+          <div class="select is-success">
+            <%= f.select :description,[['Pages views', 0], ['Functions errors', 1]] %>
+          </div>
+        </div>
+      </div>
+
+      <%= f.submit "Send issue", class:"button is-success" %>
+    <% end %>
+  </div>
+</div>

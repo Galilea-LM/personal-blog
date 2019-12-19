@@ -1,0 +1,29 @@
+.card, .blog {
+  width: 350px;
+  margin: auto;
+  .card-image {
+    figure {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .media-left {
+    margin: 0;
+  }
+  
+  .media-content {
+    margin: auto;
+    
+    .title {
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+    }
+  }
+
+  .card-footer-item {
+    margin: 0;
+  }
+}

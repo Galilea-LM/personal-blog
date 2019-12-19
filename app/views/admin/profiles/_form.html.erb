@@ -1,0 +1,52 @@
+<div class="container">
+  <%= form_for([:admin, @profile]) do |f| %>
+    <div class="field ">
+      <%= f.label :name, class: "label text green" %>
+      <div class="control has-icons-right">
+        <%= f.text_field :name, class:"input", required: true %>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field ">
+      <%= f.label :work, class: "label text green" %>
+      <div class="control has-icons-right">
+        <%= f.text_field :work, class:"input", required: true %>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field ">
+      <%= f.label :rich_biography, class: "label text green" %>
+      <div class="control">
+        <%= f.rich_text_area :rich_biography, class:"input rich-text", required: true %>
+      </div>
+    </div>
+
+  
+
+    <div class="file has-name is-boxed is-success">
+      <label class="file-label">
+        <%= f.file_field :image_profile, class: "file-input" %>
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Choose a file for profile image 
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <div class="field is-grouped is-grouped-left">
+      <p class="control">
+        <%= f.submit "Save", class:"button is-success"  %>
+      </p>
+    </div>  
+  <% end %>
+</div>

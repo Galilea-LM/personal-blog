@@ -13,13 +13,13 @@ class BlogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get new' do
-    get new_blog_url
+    get new_admin_blog_url
     assert_response :success
   end
 
   test 'should create blog' do
     assert_difference('Blog.count') do
-      post blogs_url, params: { blog: { body: @blog.body, description: @blog.description,
+      post admin_blogs_url, params: { blog: { body: @blog.body, description: @blog.description,
                                         published: @blog.published, reference: @blog.reference,
                                         tags: @blog.tags, title: @blog.title, user_id: @blog.user_id } }
     end
@@ -33,12 +33,12 @@ class BlogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get edit' do
-    get edit_blog_url(@blog)
+    get edit_admin_blog_url(@blog)
     assert_response :success
   end
 
   test 'should update blog' do
-    patch blog_url(@blog), params: { blog: { body: @blog.body, description: @blog.description,
+    patch admin_blog_url(@blog), params: { blog: { body: @blog.body, description: @blog.description,
                                              published: @blog.published, reference: @blog.reference,
                                              tags: @blog.tags, title: @blog.title, user_id: @blog.user_id } }
     assert_redirected_to blog_url(@blog)
@@ -46,9 +46,9 @@ class BlogsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy blog' do
     assert_difference('Blog.count', -1) do
-      delete blog_url(@blog)
+      delete admin_blog_url(@blog)
     end
 
-    assert_redirected_to blogs_url
+    assert_redirected_to admin_blogs_url
   end
 end

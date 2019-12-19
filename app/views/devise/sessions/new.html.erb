@@ -1,0 +1,44 @@
+<div class="full-width-container has-backgroud-image">
+  <div class="has-text-centered panel has-shadow sign-in ">
+    <p class="is-size-2-desktop is-size-3-mobile text green">Log in</p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <div class="control has-icons-left has-icons-right">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"input" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>        
+      </div>
+
+      <div class="field">
+        <div  class="control has-icons-left has-icons-right">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class:"input" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div >
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <%= f.check_box :remember_me, class: "checkbox"%>
+              remember me
+            </label>
+          </div>
+        </div>
+      <% end %>
+
+      <%= f.submit "Log in", class:"button is-success" %>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

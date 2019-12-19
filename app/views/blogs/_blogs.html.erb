@@ -1,0 +1,45 @@
+<div class="column">
+  <div class="card blog">
+    <div class="card-image">
+      <figure class="image">
+       <%= image_tag blogs.poster.variant(resize_to_limit: [250, 250]) %>
+      </figure>
+    </div>
+    <div class="card-content">
+      <p class="title is-marginless has-text-centered"><%= blogs.title %></p>
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <%= image_tag blogs.user.profile.image_profile.variant(resize_to_limit: [100, 100]) %>
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4"><%= blogs.user.profile.name %></p>
+          <p class="subtitle is-6"><%= blogs.user.email %></p>
+        </div>
+      </div>
+
+      <div class="content">
+        <%= blogs.description %>
+        <% blogs.tags.split do |tag| %>
+          <%= link_to "##{tag}", blogs %>
+        <% end %>
+        <br>
+        <time datetime="2016-1-1"><%= blogs.created_at %></time>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <span>
+          View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+        </span>
+      </p>
+      <p class="card-footer-item">
+        <span>
+          Share on <a href="#">Facebook</a>
+        </span>
+      </p>
+    </footer>
+  </div>
+
+</div>

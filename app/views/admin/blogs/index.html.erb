@@ -1,0 +1,41 @@
+<div class="has-backgroud-green full-width-container">
+  <div class="container has-backgroud-white">
+
+    <h1>Blogs</h1>
+
+    <div class="table-container">
+      <table class="table is-hoverable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th class="is-hidden-touch">Description</th>
+            <th class="is-hidden-touch">Body</th>
+            <th class="is-hidden-touch">Tags</th>
+            <th class="is-hidden-touch">Reference</th>
+            <th class="is-hidden-touch">Published</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td ><%= link_to blog.title, blog_path(blog), class: "text green" %></td>
+              <td class="is-hidden-touch"><%= blog.description %></td>
+              <td class="is-hidden-touch"><%= blog.body %></td>
+              <td class="is-hidden-touch"><%= blog.tags %></td>
+              <td class="is-hidden-touch"><%= blog.reference %></td>
+              <td class="is-hidden-touch"><%= blog.published %></td>
+              <td><%= link_to 'Edit', edit_admin_blog_path(blog), class: "text green" %></td>
+              <td><%= link_to 'Destroy', blog, method: :delete, class: "text green", data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+
+    <%= link_to 'New Blog', new_admin_blog_path, class: "button is-success"%>
+  </div>
+</div>
